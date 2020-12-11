@@ -1,6 +1,5 @@
 # WM_Editor
-A replication of a cognitive neuroscience.
-The experiment was originally conducted by Prof. Luo Huan's lab.
+A replication of a cognitive neuroscience experiment which was originally conducted by Prof. Luo Huan's lab.
 Created by Boxi & Yihan
 
 # Issues
