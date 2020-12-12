@@ -85,13 +85,14 @@ set(handles.slider1, 'enable', 'off');
 set(handles.submit, 'enable', 'off');
 num = xlsread(Dataset, 'sheet1', 'A1');
 rb_type = mod(round(rand() * 1000), 2);
+color_bar = []
 %disp(num);
 cla reset;
 axis([-30,30,-30,30]);
 axis equal;
 set(gca,'ytick',[]);
 set(gca,'xtick',[]);
-color = color_bar(1, 1 + rb_type); 
+color = 'b'; 
 deg = rand() * pi;
 set(handles.edit, 'string', 'Rectangle No.1');
 Show_Rectangle;
@@ -99,7 +100,7 @@ disp("1st:");
 disp(deg);
 result(1,1) = deg;
 deg = rand() * pi;
-color = color_bar(1, 2 - rb_type); 
+color = 'r';
 set(handles.edit, 'string', 'Rectangle No.2');
 Show_Rectangle;
 disp("2nd:");
@@ -191,9 +192,9 @@ set(handles.start, 'enable', 'on');
 set(handles.edit, 'string', 'The answer is');
 ro = hgtransform;
 if result(1, 3) == 1 
-    color = color_bar(1, 1 + rb_type); 
+    color = [0 0 1];
 else
-    color = color_bar(1, 2 - rb_type); 
+    color = [1 0 0];
 end
 rectangle('Position', [-25,-5,50,10], 'Curvature', [0 0], 'edgecolor', color, 'facecolor', color, 'parent', ro, 'linewidth', 1);
 ro.Matrix = makehgtform('zrotate', result(result(1, 3)));
